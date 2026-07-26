@@ -20,6 +20,44 @@ It is also an open-source **framework template** that other people fork. Two mod
 
 ---
 
+# Bug report template
+
+When something breaks, paste this and fill in all four lines. Write it for a stranger who has never seen this repo — that mindset is what forces the file path, the exact command, and the verbatim error text into the report instead of "it's not working".
+
+```
+What I did:
+What I expected:
+What actually happened:
+What I've already tried:
+```
+
+**Line-by-line, what "specific" means here:**
+
+| Line | Weak | Strong |
+|------|------|--------|
+| What I did | "I ran the apply command" | the exact invocation, from which directory, on which file |
+| What I expected | "it should work" | the concrete observable: exactly 2 pages, a `results` array, exit 0 |
+| What actually happened | "it broke" | verbatim error text or log line, exit code, and the artifact path to look at |
+| What I've already tried | *(omitted)* | the dead ends, so they don't get re-run |
+
+Paste the **exact** error string rather than a paraphrase — one character of a LaTeX log or a stderr JSON blob usually names the failing file and line. For layout problems, say which PDF to open (`Read` renders it); for CLI problems, include the stderr JSON and the exit code.
+
+**Worked example** — this level of detail is fixable on the first pass:
+
+> **What I did:** Ran `/apply <jobindex URL>`. At step 6 it compiled the cover letter: `cd cover_letters && xelatex -interaction=nonstopmode cover_acme_dataengineer.tex`.
+>
+> **What I expected:** Exactly 1 page with the signature block visible, per the Verification Checklist.
+>
+> **What actually happened:** `cover_acme_dataengineer.log` ends with `Output written on cover_acme_dataengineer.pdf (2 pages, 41283 bytes)`. Page 2 contains only the closing line and signature. Reading the PDF, the three bullets in the middle paragraph are set in the body font, not Raleway.
+>
+> **What I've already tried:** Re-ran xelatex twice (identical output), deleted `*.aux`, confirmed `cover_letters/OpenFonts/fonts/raleway/Raleway-Medium.otf` exists. I have not touched the `\lettercontent{}` wrapping around the `itemize` block.
+
+That last report is nearly self-solving: "bullets in the body font" plus "`\lettercontent{}` wrapping `itemize`" is the exact pitfall the [Verification Checklist](#compiled-pdf-verification-mandatory---never-skip) names, with the fix written out. That is the template working as designed — about half the time, filling in *expected* vs *actual* surfaces the cause before you send it.
+
+Use it even when you're sure it'll be quick.
+
+---
+
 # Codebase Guide (for framework development)
 
 ## What kind of codebase this is
