@@ -1,10 +1,9 @@
-%% Example CV - [YOUR_NAME]
+%% Example CV - Eric Hatch
 %% Comprehensive overview of all competencies, experience, and achievements.
 %% Use as a master reference when tailoring role-specific CVs.
 %%
-%% SETUP: Run /setup to populate this with your actual information.
+%% SETUP: Populated from resume via /setup Path B.
 %% Compile with: lualatex main_example.tex
-%% (pdflatex often fails on modern MiKTeX with fontawesome5 font-expansion errors.)
 
 \documentclass[11pt,a4paper,sans]{moderncv}
 \moderncvstyle{banking}
@@ -24,18 +23,19 @@
     linkcolor=blue,
     filecolor=magenta,
     urlcolor=blue,
-    pdftitle={[YOUR_NAME] - CV},
+    pdftitle={Eric Hatch - CV},
     pdfpagemode=FullScreen,
 }
 \usepackage[scale=0.80]{geometry}
 \usepackage{import}
+\usepackage{needspace}
 
 % personal data
-\name{[First]}{[Last]}
-\address{[Your Address, City, Country]}{}{}
-\phone[mobile]{[+XX XXXXXXXXXX]}
-\email{[your.email@example.com]}
-\extrainfo{\href{[https://linkedin.com/in/your-profile]}{LinkedIn}, \href{[https://github.com/your-username]}{GitHub}}
+\name{Eric}{Hatch}
+\address{St. Augustine, FL, USA}{}{}
+\phone[mobile]{(207) 468-6688}
+\email{hatcheric950@gmail.com}
+\extrainfo{Open to Remote / Nationwide Roles}
 
 \begin{document}
 
@@ -46,7 +46,7 @@
 % ============================================================
 
 \vspace{6pt}
-\small{[Write a 3-5 line profile statement tailored to the role you're applying for. Focus on what makes you uniquely qualified. Example: "Data scientist with a PhD in [field] and X years of industry experience. Combines deep domain expertise in [domain] with strong applied machine learning and Python development skills. Experienced in developing end-to-end ML pipelines, from data ingestion to stakeholder-facing dashboards."]}
+\small{CompTIA A+ certified IT and AI automation professional with 5+ years of high-performance customer-facing, CRM, and technical sales experience. Completed the Google Cybersecurity Certificate and built hands-on projects involving AI agents, workflow automation, Linux, GitHub, VPS environments, documentation, and troubleshooting. Proven ability to translate complex technology into clear business outcomes, create repeatable SOPs, and improve customer follow-up through practical automation.}
 
 % ============================================================
 %     CORE COMPETENCIES
@@ -56,15 +56,52 @@
 \vspace{1pt}
 \begin{itemize}
 
-\item \textbf{[Skill Category 1]}: [Specific skills, frameworks, tools. Be concrete.]
+\item \textbf{IT Support}: Windows, macOS, Linux / Pop!\_OS, hardware and software troubleshooting, system setup, remote-support fundamentals
 
-\item \textbf{[Skill Category 2]}: [Specific skills, frameworks, tools.]
+\item \textbf{Cybersecurity}: Networking and security fundamentals, Linux commands, threat detection awareness, incident response basics, risk and compliance awareness
 
-\item \textbf{[Skill Category 3]}: [Specific skills, frameworks, tools.]
+\item \textbf{AI \& Automation}: ChatGPT, Claude, Claude Code, prompt engineering, AI agents, workflow design, SOPs, lead and customer follow-up automation
 
-\item \textbf{[Skill Category 4]}: [Domain expertise, methods, approaches.]
+\item \textbf{Developer \& Systems}: GitHub, command-line workflows, self-hosted systems, OVH VPS experimentation, project documentation
 
-\item \textbf{[Skill Category 5]}: [Tools, platforms, software.]
+\item \textbf{Business Platforms}: Salesforce, automotive CRM / DMS, Smartsheet, Microsoft 365, Google Workspace, LinkedIn Sales Navigator
+
+\item \textbf{Client \& Revenue}: Technical communication, customer discovery, stakeholder training, pipeline management, B2B / B2C consultative sales
+
+\end{itemize}
+
+% ============================================================
+%     TECHNICAL PROJECTS
+% ============================================================
+
+\section{Technical Projects}
+\vspace{3pt}
+\begin{itemize}
+
+\needspace{5\baselineskip}
+\item{\cventry{Ongoing}{AI Automation Agent}{EricBot}{Remote}{}{\vspace{1pt}
+\begin{itemize}
+    \item Built and published a Hermes-inspired personal automation agent demonstrating prompt design, agent workflows, task orchestration, and self-directed technical execution
+    \item Created reusable workflow logic and documentation for task assistance, business operations, and automation-support use cases
+\end{itemize}}}
+
+\vspace{3pt}
+
+\needspace{5\baselineskip}
+\item{\cventry{2024--Present}{AI Agency Automation Systems}{NEXUS}{Remote}{}{\vspace{1pt}
+\begin{itemize}
+    \item Designed practical client workflows for lead generation, content production, customer follow-up, and SOP documentation using ChatGPT and Claude
+    \item Reduced a client follow-up process from more than 3 hours of daily manual outreach to under 30 minutes through structured AI-assisted workflows
+\end{itemize}}}
+
+\vspace{3pt}
+
+\needspace{5\baselineskip}
+\item{\cventry{Ongoing}{Linux \& Cybersecurity Home Lab}{Independent Lab}{Remote}{}{\vspace{1pt}
+\begin{itemize}
+    \item Operate a multi-computer environment for Linux administration, command-line practice, troubleshooting, security fundamentals, and automation experimentation
+    \item Maintain a GitHub portfolio containing 10+ AI automation, bot, and application projects developed through hands-on learning
+\end{itemize}}}
 
 \end{itemize}
 
@@ -76,34 +113,51 @@
 \vspace{3pt}
 \begin{itemize}
 
-% --- Most Recent Role ---
-\item{\cventry{[YYYY--Present]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
+\needspace{5\baselineskip}
+\item{\cventry{2024--Present}{Founder \& AI Automation Strategist}{NEXUS AI Agency}{Remote}{}{\vspace{1pt}
 \begin{itemize}
-    \item [Achievement or responsibility 1 - be specific, use numbers where possible]
-    \item [Achievement or responsibility 2]
-    \item [Achievement or responsibility 3]
-    \item [Achievement or responsibility 4]
+    \item Built an AI-powered marketing and automation practice covering discovery, workflow strategy, implementation, client communication, and documentation
+    \item Audit business operations to identify repetitive work and convert it into practical AI-assisted workflows using ChatGPT, Claude, and structured process design
+    \item Create SOPs for content production, lead generation, customer follow-up, and communication pipelines in outcome-focused language
 \end{itemize}}}
 
 \vspace{3pt}
 
-% --- Previous Role ---
-\item{\cventry{[YYYY--YYYY]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
+\needspace{5\baselineskip}
+\item{\cventry{Jan 2023--Present}{Vehicle Experience Specialist}{Volkswagen of St. Augustine}{St. Augustine, FL}{}{\vspace{1pt}
 \begin{itemize}
-    \item [Achievement or responsibility 1]
-    \item [Achievement or responsibility 2]
-    \item [Achievement or responsibility 3]
+    \item Ranked \#1 salesperson five times; closed 12--15 vehicles per month; generated more than \$2 million in annual revenue
+    \item Managed the complete customer lifecycle from digital lead through financing, delivery, and post-sale support using CRM and dealership systems
+    \item Increased client retention by 30\% via multi-channel CRM follow-up; grew online engagement 40\% with video and social content; improved closing rates 20\% by clarifying product, technology, and financing options
 \end{itemize}}}
 
 \vspace{3pt}
 
-% --- Earlier Role ---
-\item{\cventry{[YYYY--YYYY]}{[Job Title]}{[Company]}{[City, Country]}{}{\vspace{1pt}
+\needspace{5\baselineskip}
+\item{\cventry{Jan 2021--Jan 2023}{Outside Sales Associate}{Shultz and Lyman}{Augusta, ME}{}{\vspace{1pt}
 \begin{itemize}
-    \item [Achievement or responsibility 1]
-    \item [Achievement or responsibility 2]
+    \item Managed B2B and B2C account development and pipeline activity using Salesforce CRM; weekly field visits to 10+ corporate accounts; expanded portfolios by 15\%
+    \item Maintained 98\% on-time order fulfillment and helped reduce delivery delays by 25\% through cross-functional coordination with operations
 \end{itemize}}}
 
+\vspace{3pt}
+
+\needspace{5\baselineskip}
+\item{\cventry{2020--2021}{Entrepreneur --- E-Commerce \& Photography}{Self-Employed}{Remote / Maine}{}{\vspace{1pt}
+\begin{itemize}
+    \item Built Shopify and Amazon storefronts; managed photography editing workflows, software setup, and day-to-day technical troubleshooting
+\end{itemize}}}
+
+\end{itemize}
+
+% ============================================================
+%     CERTIFICATIONS
+% ============================================================
+
+\section{Certifications \& Development}
+\vspace{1pt}
+\begin{itemize}
+\item CompTIA A+; Google Cybersecurity Professional Certificate; Volkswagen Level 3 Master; HubSpot Social Media Marketing; Sandler Sales Training. Communities: AI Automation Club; coding and AI-agent coursework.
 \end{itemize}
 
 % ============================================================
@@ -114,15 +168,7 @@
 \vspace{1pt}
 \begin{itemize}
 
-\item{\cventry{[YYYY--YYYY]}{[Degree] in [Field]}{[Institution]}{[City, Country]}{}{\vspace{1pt}
-Thesis: ``[Thesis Title].'' [Brief description of research focus.]
-}}
-
-\vspace{3pt}
-
-\item{\cventry{[YYYY--YYYY]}{[Degree] in [Field]}{[Institution]}{[City, Country]}{}{\vspace{1pt}
-[Brief description or key topics.]
-}}
+\item{\cventry{}{Business Administration / Marketing Coursework}{Nichols College and Southern New Hampshire University}{}{}{}}
 
 \end{itemize}
 
@@ -133,27 +179,18 @@ Thesis: ``[Thesis Title].'' [Brief description of research focus.]
 \section{Languages}
 \vspace{1pt}
 \begin{itemize}
-\item [Language 1] (native), [Language 2] (fluent), [Language 3] (intermediate).
+\item English (native).
 \end{itemize}
 
 % ============================================================
-%     PUBLICATIONS (optional)
-% ============================================================
-
-\section{Publications}
-\vspace{1pt}
-\begin{itemize}
-\item [Author(s)] ([Year]). [Title]. [Journal/Conference]. \href{[DOI_URL]}{DOI link}
-\end{itemize}
-
-% ============================================================
-%     HONORS AND AWARDS (optional)
+%     HONORS AND AWARDS
 % ============================================================
 
 \section{Honors and Awards}
 \vspace{1pt}
 \begin{itemize}
-\item{\textbf{[Award Name]} -- [Event/Organization] ([Year]).}
+\item{\textbf{\#1 Salesperson} -- Volkswagen of St. Augustine (5 times); Employee of the Month (3 times).}
+\item{\textbf{Sales Excellence Award} -- Shultz and Lyman.}
 \end{itemize}
 
 % ============================================================
