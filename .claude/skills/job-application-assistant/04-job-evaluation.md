@@ -1,6 +1,6 @@
 # Job Evaluation Framework
 
-<!-- SETUP: Skill match areas and career goals are personalized by running /setup -->
+<!-- SETUP: Skill match areas and career goals personalized for Eric Hatch -->
 
 ## Scoring Dimensions
 
@@ -16,9 +16,9 @@ How well do the required/preferred skills align with the candidate's capabilitie
 | 40-59 | Partial match, significant upskilling needed |
 | 0-39 | Fundamental mismatch |
 
-**Strong match areas:** [YOUR_PRIMARY_SKILLS]
-**Moderate match areas:** [YOUR_SECONDARY_SKILLS]
-**Weak match areas:** [SKILLS_YOU_LACK]
+**Strong match areas:** IT support fundamentals (Windows/macOS/Linux troubleshooting), AI automation (ChatGPT/Claude/agents/SOPs), technical customer success, CRM (Salesforce / automotive DMS), technical sales communication
+**Moderate match areas:** Cybersecurity foundations (Google Cybersecurity Certificate, networking/IR awareness, home lab), GitHub/CLI/VPS, Smartsheet/M365/Google Workspace, content/social for inbound
+**Weak match areas:** Senior SOC / penetration testing, deep cloud architecture (AWS/Azure multi-account), software engineering as primary IC role, formal MSP ticketing tenure at scale
 
 ### 2. Experience Match (0-100)
 Does work history align with what they're looking for?
@@ -30,9 +30,9 @@ Does work history align with what they're looking for?
 | 40-59 | Adjacent experience, would need to make the case |
 | 0-39 | Unrelated experience |
 
-**Strong:** [YOUR_DIRECT_EXPERIENCE_DOMAINS]
-**Moderate:** [YOUR_ADJACENT_EXPERIENCE]
-**Entry-level:** [ROLES_WITH_LIMITED_EXPERIENCE]
+**Strong:** High-performance customer-facing sales, CRM lifecycle management, AI automation consulting/founder work, technical product explanation
+**Moderate:** E-commerce/ops troubleshooting, Linux/cyber home lab projects, certification-backed IT foundations
+**Entry-level:** Dedicated help desk / desktop support roles, junior cybersecurity / SOC analyst roles (certs + labs, limited production SOC tenure)
 
 ### 3. Behavioral/Culture Fit (0-100)
 Does the role and company culture match the behavioral profile?
@@ -47,9 +47,9 @@ Does the role and company culture match the behavioral profile?
 **Red flags to research:** Department disorganization, work dominated by maintenance over development, poor chemistry with leadership, culture mismatches. Check reviews, media coverage, LinkedIn connections, and network contacts for insider perspective.
 
 ### 4. Location & Logistics (Pass/Fail + Notes)
-- Within commute range: PASS
-- Remote with occasional office: PASS
-- Requires relocation: FAIL (deal-breaker)
+- Remote / nationwide US: PASS
+- St. Augustine FL / Northeast Florida / Jacksonville metro on-site or hybrid: PASS
+- Requires relocation outside preferred scope: FLAG (discuss with user; default FAIL if mandatory relocation with no remote option)
 - Frequent international travel: FLAG (discuss with user)
 
 ### 5. Career Alignment & Motivation (0-100)
@@ -63,19 +63,19 @@ Does this role advance career goals and contain tasks that energize?
 | 0-39 | Dead end or backwards step |
 
 **Career goals:**
-- [YOUR_CAREER_GOAL_1]
-- [YOUR_CAREER_GOAL_2]
-- [YOUR_CAREER_GOAL_3]
+- Move into IT support / technical customer success with a clear path into cybersecurity or AI ops
+- Apply AI automation skills to real business workflows (SOPs, follow-up, ops)
+- Build formal IT/security experience on top of CompTIA A+ and Google Cybersecurity foundations
 
 **Motivation filter:** Evaluate not just whether you *can* do the tasks, but whether the tasks will *energize* you. Consider:
-- Tasks that energize: [YOUR_ENERGIZING_TASKS]
-- Tasks that drain: [YOUR_DRAINING_TASKS]
+- Tasks that energize: troubleshooting, documenting SOPs, building AI workflows, helping customers understand tech, measurable ownership
+- Tasks that drain: pure cold-call quota with no technical learning; static admin with no process improvement
 - Non-task factors: leadership style, department culture, company values, degree of autonomy
 
 **Life situation alignment:** Consider personal constraints:
-- **Security**: [YOUR_FINANCIAL_SITUATION_CONTEXT]
-- **Flexibility**: [YOUR_SCHEDULE_CONSTRAINTS]
-- **Professional development**: [YOUR_GROWTH_PRIORITIES]
+- **Security**: Currently dual-employed (VW + NEXUS); prefer roles that stabilize IT/tech career path
+- **Flexibility**: Remote / nationwide preferred; local FL on-site OK
+- **Professional development**: Certs, labs, and hands-on tooling growth matter
 
 ### 6. Salary Benchmark (Optional)
 
