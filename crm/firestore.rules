@@ -1,0 +1,62 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    // A member is a signed-in user whose users/{uid} doc has active == true.
+    function isMember() {
+      return signedIn()
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.active == true;
+    }
+
+    // Users can create their own profile doc (inactive) when they first sign
+    // up. Activation (active: true) is done by an existing member from the
+    // Settings screen, or from the Firebase console for the very first user.
+    match /users/{uid} {
+      allow read: if signedIn();
+      allow create: if signedIn()
+        && request.auth.uid == uid
+        && request.resource.data.active == false;
+      allow update: if isMember();
+      allow delete: if false;
+    }
+
+    // Core CRM objects — members only.
+    match /leads/{id} {
+      allow read, write: if isMember();
+    }
+    match /accounts/{id} {
+      allow read, write: if isMember();
+    }
+    match /contacts/{id} {
+      allow read, write: if isMember();
+    }
+    match /opportunities/{id} {
+      allow read, write: if isMember();
+    }
+    match /activities/{id} {
+      allow read, write: if isMember();
+    }
+
+    // Settings (web-to-lead API key lives in settings/capture). Members only;
+    // the webToLead Cloud Function reads it with the Admin SDK, which bypasses
+    // these rules.
+    match /settings/{id} {
+      allow read, write: if isMember();
+    }
+
+    // Rate-limit bookkeeping written by the webToLead function (Admin SDK
+    // only) — no client access.
+    match /captureRateLimits/{id} {
+      allow read, write: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FireCRM</title>
+  <link rel="stylesheet" href="/css/app.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+</head>
+<body>
+  <div id="auth-screen" class="auth-screen hidden">
+    <div class="auth-card">
+      <h1>🔥 FireCRM</h1>
+      <p class="muted" id="auth-subtitle">Sign in to your workspace</p>
+      <form id="auth-form">
+        <input type="email" id="auth-email" placeholder="Email" required autocomplete="email">
+        <input type="password" id="auth-password" placeholder="Password" required minlength="6" autocomplete="current-password">
+        <button type="submit" class="btn btn-primary" id="auth-submit">Sign in</button>
+      </form>
+      <p class="auth-error" id="auth-error"></p>
+      <p class="muted small">
+        <a href="#" id="auth-toggle">No account? Sign up</a>
+      </p>
+      <p class="muted small" id="auth-pending-msg" style="display:none">
+        Your account is awaiting activation. An existing member can activate you
+        from Settings, or set <code>active: true</code> on your user document in
+        the Firebase console.
+      </p>
+    </div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <nav class="sidebar">
+      <div class="logo">🔥 FireCRM</div>
+      <a href="#/dashboard" data-nav="dashboard">📊 Dashboard</a>
+      <a href="#/leads" data-nav="leads">🎯 Leads</a>
+      <a href="#/contacts" data-nav="contacts">👤 Contacts</a>
+      <a href="#/accounts" data-nav="accounts">🏢 Accounts</a>
+      <a href="#/pipeline" data-nav="pipeline">💰 Pipeline</a>
+      <a href="#/activities" data-nav="activities">📝 Activities</a>
+      <a href="#/settings" data-nav="settings">⚙️ Settings</a>
+      <div class="sidebar-footer">
+        <span id="user-email" class="muted small"></span>
+        <button id="sign-out" class="btn btn-ghost small">Sign out</button>
+      </div>
+    </nav>
+    <main id="main" class="main"></main>
+  </div>
+
+  <div id="modal-root"></div>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact us</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #f4f5f7; display: grid; place-items: center; min-height: 100vh; margin: 0; }
+    form { background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,.08); width: min(420px, 90vw); display: grid; gap: .75rem; }
+    h2 { margin: 0 0 .25rem; }
+    input, textarea { padding: .6rem .75rem; border: 1px solid #d0d4da; border-radius: 8px; font: inherit; }
+    button { padding: .7rem; border: 0; border-radius: 8px; background: #e8590c; color: #fff; font-weight: 600; cursor: pointer; }
+    .hp { position: absolute; left: -9999px; }
+    #status { min-height: 1.2em; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <!--
+    Embeddable Web-to-Lead form.
+    1. Set ENDPOINT to your deployed webToLead function URL.
+    2. Set API_KEY to the capture key from FireCRM → Settings.
+       (The key only allows creating leads — nothing can be read with it —
+        but rotate it if it starts attracting spam.)
+  -->
+  <form id="lead-form">
+    <h2>Get in touch</h2>
+    <input name="firstName" placeholder="First name" required>
+    <input name="lastName" placeholder="Last name" required>
+    <input name="email" type="email" placeholder="Work email" required>
+    <input name="phone" type="tel" placeholder="Phone (optional)">
+    <input name="company" placeholder="Company">
+    <textarea name="message" placeholder="What can we help with?" rows="3"></textarea>
+    <!-- Honeypot: humans never see it, bots fill it. -->
+    <input class="hp" name="faxNumber" tabindex="-1" autocomplete="off">
+    <button type="submit">Send</button>
+    <div id="status"></div>
+  </form>
+
+  <script>
+    const ENDPOINT = "https://YOUR-REGION-YOUR-PROJECT.cloudfunctions.net/webToLead";
+    const API_KEY = "YOUR-CAPTURE-API-KEY";
+
+    document.getElementById("lead-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const status = document.getElementById("status");
+      status.textContent = "Sending…";
+      const data = Object.fromEntries(new FormData(e.target).entries());
+      try {
+        const res = await fetch(ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "x-api-key": API_KEY },
+          body: JSON.stringify(data),
+        });
+        if (!res.ok) throw new Error((await res.json()).error || res.statusText);
+        status.textContent = "Thanks! We'll be in touch.";
+        e.target.reset();
+      } catch (err) {
+        status.textContent = "Something went wrong: " + err.message;
+      }
+    });
+  </script>
+</body>
+</html>
