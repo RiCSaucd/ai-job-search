@@ -67,6 +67,9 @@ job_search_tracker.csv
 # Upskill reports (personal output)
 upskill/*.md
 
+# Job briefs and productized offers (personal output)
+job_briefs/*.md
+
 # Agent skills: track the source, ignore only deps and logs.
 # (A blanket `.agents/` ignore silently drops the job-search CLI skills from the repo.)
 .agents/**/node_modules/

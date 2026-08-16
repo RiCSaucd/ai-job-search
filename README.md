@@ -129,6 +129,12 @@ This runs the full workflow: evaluate fit, draft CV + cover letter, review with 
 
 `/reset` is also available, see [Starting over](#starting-over) below.
 
+Companion skills (no slash command; trigger from chat):
+
+- **web-job-brief** fetches a public job URL and extracts must-haves, ATS keywords, salary, and the apply link into a structured brief for `/apply`.
+- **freelance-outreach** turns a gig post into a 5-line pitch plus a profile-grounded rate suggestion.
+- **productized-offer** turns a repeated job-requirement pattern into a sellable 1-week automation package (cash while searching).
+
 ## File structure
 
 ```
@@ -156,7 +162,10 @@ ai-job-search/
 │   │   │   ├── 06-cover-letter-templates.md # LaTeX cover letter templates
 │   │   │   └── 07-interview-prep.md   # STAR examples + interview framework
 │   │   ├── job-scraper/               # Job search orchestration
-│   │   └── upskill/                   # /upskill skill gap analysis and learning plan
+│   │   ├── upskill/                   # /upskill skill gap analysis and learning plan
+│   │   ├── web-job-brief/             # Public job URL -> structured brief for /apply
+│   │   ├── freelance-outreach/        # Gig post -> 5-line pitch + rate suggestion
+│   │   └── productized-offer/         # Requirement pattern -> 1-week sellable package
 │   └── settings.json                  # Claude Code permissions (shared, scoped)
 ├── .agents/skills/                    # Job portal CLI tools
 │   ├── jobbank-search/                # Akademikernes Jobbank (Denmark)
@@ -189,6 +198,7 @@ ai-job-search/
 │   └── README_SALARY_TOOL.md          # Salary tool setup instructions
 ├── job_scraper/                       # Scraper state (seen jobs, results)
 ├── upskill/                           # /upskill report output (markdown reports per run)
+├── job_briefs/                        # Optional saved briefs/offers (gitignored)
 ├── job_search_tracker.csv             # Application tracking spreadsheet
 └── SETUP.md                           # Detailed setup guide
 ```

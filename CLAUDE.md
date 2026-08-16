@@ -89,14 +89,17 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 - `cv/` - LaTeX CV variants (moderncv template, banking style)
 - `cover_letters/` - LaTeX cover letters (custom cover.cls template)
 - `.claude/skills/` - AI skill definitions for the application workflow
+  (`job-application-assistant`, `job-scraper`, `upskill`, `web-job-brief`,
+  `freelance-outreach`, `productized-offer`)
 - `.agents/skills/` - Job search CLI tools
 
 ## Workflow for New Job Applications
-1. User provides a job posting (URL or text)
+1. User provides a job posting (URL or text). Optionally run **web-job-brief** first to extract must-haves, keywords, salary, and the apply link.
 2. **Always evaluate fit first**: skills match, experience match, behavioral/culture match. Present this assessment to the user before proceeding.
 3. If good fit: create targeted CV (`cv/main_<company>.tex`) and cover letter (`cover_letters/cover_<company>_<role>.tex`)
 4. **Verify both documents** (see Verification Checklist below)
 5. Prepare interview talking points based on the role requirements and your strengths
+6. For gigs (not FTE), use **freelance-outreach**. If the same pain repeats across postings, use **productized-offer** to sell a 1-week automation package while searching.
 
 **Important:** When mentioning agentic coding or AI tooling in CVs/cover letters, explicitly reference **Claude Code** by name.
 
