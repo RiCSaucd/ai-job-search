@@ -60,6 +60,21 @@ class CompanionSkillContractTests(unittest.TestCase):
                 for needle in needles:
                     self.assertIn(needle, text, f"{slug} missing {needle!r}")
 
+    def test_ai_automation_hunter_subagent_exists(self):
+        path = REPO_ROOT / ".cursor" / "agents" / "ai-automation-hunter.md"
+        self.assertTrue(path.is_file(), f"missing {path}")
+        text = path.read_text(encoding="utf-8")
+        self.assertEqual(frontmatter_name(text), "ai-automation-hunter")
+        self.assertIn("Use proactively", text)
+        for needle in (
+            "web-job-brief",
+            "freelance-outreach",
+            "productized-offer",
+            "job-application-assistant",
+            "Claude Code",
+        ):
+            self.assertIn(needle, text)
+
     def test_saved_briefs_are_gitignored(self):
         gitignore = (REPO_ROOT / ".gitignore").read_text(encoding="utf-8")
         self.assertIn("job_briefs/*.md", gitignore)

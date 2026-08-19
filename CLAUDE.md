@@ -92,6 +92,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
   (`job-application-assistant`, `job-scraper`, `upskill`, `web-job-brief`,
   `freelance-outreach`, `productized-offer`)
 - `.agents/skills/` - Job search CLI tools
+- `.cursor/agents/ai-automation-hunter.md` - Cursor subagent that finds AI automation jobs/gigs and routes them to `web-job-brief`, `freelance-outreach`, `productized-offer`, or `/apply`
 
 ## Workflow for New Job Applications
 1. User provides a job posting (URL or text). Optionally run **web-job-brief** first to extract must-haves, keywords, salary, and the apply link.

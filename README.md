@@ -135,11 +135,15 @@ Companion skills (no slash command; trigger from chat):
 - **freelance-outreach** turns a gig post into a 5-line pitch plus a profile-grounded rate suggestion.
 - **productized-offer** turns a repeated job-requirement pattern into a sellable 1-week automation package (cash while searching).
 
+The **ai-automation-hunter** Cursor subagent (`.cursor/agents/ai-automation-hunter.md`) finds AI automation jobs and gigs, then routes each lead to those skills.
+
 ## File structure
 
 ```
 ai-job-search/
 ├── CLAUDE.md                          # Main candidate profile + workflow rules
+├── .cursor/agents/
+│   └── ai-automation-hunter.md        # Cursor subagent: find AI automation work, route to cash
 ├── .claude/
 │   ├── commands/
 │   │   ├── apply.md                   # /apply workflow (drafter-reviewer)
