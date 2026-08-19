@@ -16,6 +16,7 @@ allowed-tools: Read, Glob, Grep, WebFetch, WebSearch, Edit, Write, AskUserQuesti
 When the user provides a job posting (URL or text), follow this workflow:
 
 ### Step 1: Research & Evaluate Fit
+- If a `web-job-brief` is already in context (or `job_briefs/<company>-<role>.md` exists), reuse it and only WebFetch if must-haves or the apply URL are missing
 - Fetch the job posting content (use WebFetch for URLs)
 - Analyze the posting for required competencies, keywords, and priorities
 - Research the company (website, LinkedIn, mission, recent news)
@@ -66,3 +67,4 @@ The user may also ask for individual steps without the full workflow:
 - "Write a cover letter for [role] at [company]" - Step 3 only
 - "Help me prepare for an interview at [company]" - Step 4 only
 - "What jobs should I look for?" - Career strategy discussion using profile + evaluation framework
+- "Brief this job" - hand off to the `web-job-brief` skill first, then resume here
