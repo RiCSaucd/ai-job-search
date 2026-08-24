@@ -14,7 +14,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 
 ### Identity
 - **Name:** Eric Hatch
-- **Location:** St. Augustine, FL, USA (open to remote / nationwide roles; Northeast Florida on-site acceptable)
+- **Location:** St. Augustine, FL 32080, USA (open to remote / nationwide roles; Northeast Florida on-site acceptable)
 - **Languages:** English (native)
 - **Status:** Employed (Vehicle Experience Specialist, Volkswagen of St. Augustine) and Founder (NEXUS AI Agency)
 - **LinkedIn headline:** "IT Support | AI Automation | Cybersecurity Foundations | Technical Customer Success"
@@ -43,9 +43,9 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 
 ### Technical Skills
 - **Primary:** IT support (Windows, macOS, Linux/Pop!_OS, hardware/software troubleshooting, remote support), AI automation (ChatGPT, Claude, prompt engineering, AI agents, SOPs, workflow design), cybersecurity foundations (networking, threat detection awareness, incident response basics, risk/compliance awareness)
-- **Secondary:** GitHub, CLI workflows, self-hosted/VPS (OVH) experimentation, Salesforce, automotive CRM/DMS, Smartsheet, Microsoft 365, Google Workspace, LinkedIn Sales Navigator
+- **Secondary:** GitHub, CLI workflows, self-hosted/VPS (OVH) experimentation, Salesforce, Microsoft Dynamics 365, automotive CRM/DMS, Smartsheet, Microsoft 365, Google Workspace, LinkedIn Sales Navigator
 - **Domain:** Technical customer success, consultative B2B/B2C sales, translating complex tech into business outcomes
-- **Software:** ChatGPT, Claude, Claude Code (agentic coding), Salesforce, Shopify, Amazon Seller, M365, Google Workspace
+- **Software:** ChatGPT, Claude, Claude Code (agentic coding), Salesforce, Microsoft Dynamics 365, Shopify, Amazon Seller, M365, Google Workspace
 
 ### Certifications
 - **CompTIA A+ Certification**
@@ -53,6 +53,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 - **Volkswagen Level 3 Master Certification**
 - **HubSpot Social Media Marketing Certification**
 - **Sandler Sales Training**
+- **Certified Outside Sales Professional (COSP)** — Sales Training International
 - Professional communities: AI Automation Club; coding and AI-agent workflow coursework
 
 ### Publications
@@ -61,6 +62,11 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 ### Awards
 - #1 Salesperson, Volkswagen of St. Augustine — 5 times; Employee of the Month — 3 times
 - Sales Excellence Award, Shultz and Lyman
+
+### Volunteer Work
+- Habitat for Humanity (St. Augustine, FL): 100+ hours; helped complete 5 homes
+- St. Johns County Food Bank (St. Augustine, FL)
+- Big Brothers Big Sisters (Augusta, ME)
 
 ### Behavioral Profile
 <!-- Inferred from CV — review before relying on this -->
@@ -80,6 +86,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 - AI automation agencies, ops automation, and technical customer success
 - Cybersecurity (entry / junior analyst / SOC foundations)
 - Automotive retail tech-adjacent and CRM-heavy customer success roles
+- Insurance sales / producer-trainee roles that train and license (no producer license on file; do not claim insurance employment)
 
 ### Deal-breakers
 - None stated on resume — refine via `/setup --section search` later

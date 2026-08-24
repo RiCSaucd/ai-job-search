@@ -78,6 +78,21 @@ CLI translations:
 - linkedin-search: `-q "Implementation Specialist" -l "United States" --jobage 14`
 - freehire-search: broader technical support / ops keywords with remote
 
+### Priority 5: Insurance Sales / Producer Trainee
+
+Use when targeting from the Insurance Sales Specialist résumé variant. Prefer roles that train and license. Do not apply to postings that require an active FL 2-15 / 2-20 / life-health license unless Eric confirms he holds it.
+
+```
+site:linkedin.com/jobs "Insurance Sales" OR "Insurance Agent" Florida
+site:linkedin.com/jobs "Insurance Producer" OR "Licensed Agent trainee" Remote
+site:linkedin.com/jobs "Insurance Sales Specialist" "St. Augustine" OR Jacksonville
+```
+
+CLI translations:
+- linkedin-search: `-q "Insurance Sales" -l "St. Augustine, Florida, United States" --jobage 14`
+- linkedin-search: `-q "Insurance Agent" -l "Jacksonville, Florida, United States" --jobage 14`
+- linkedin-search: `-q "Insurance Sales Specialist" -l "Florida, United States" --jobage 14`
+
 ## Location Filter
 
 When evaluating results, verify the job location fits:
@@ -97,4 +112,5 @@ Only include jobs posted within the last 14 days, or with an application deadlin
 If the user specifies a focus area, select queries from the matching category and also generate 2-3 custom queries for that focus. For example:
 - "/scrape cybersecurity" -> Priority 3 + custom SOC/IR queries
 - "/scrape automation" -> Priority 2 + freehire AI/ops queries
-- "/scrape broad" -> all four priority categories
+- "/scrape insurance" -> Priority 5 + local FL agency/carrier trainee queries
+- "/scrape broad" -> all five priority categories

@@ -118,6 +118,9 @@ Write 5-7 lines that function as an "elevator pitch": a concise, compelling intr
 **For Technical Customer Success roles:**
 > Technical customer success profile: Salesforce and automotive CRM lifecycle ownership, Sandler sales training, and a track record of retention (+30%) and engagement (+40%) gains. Pairs CRM discipline with AI-assisted follow-up automation and clear product/technology explanations for B2B and B2C customers.
 
+**For Insurance Sales / Producer Trainee roles:**
+> Consultative salesperson with 5+ years of CRM-driven client work, 12-15 closed deals per month, more than $2M annual revenue, and a 30% retention lift from disciplined follow-up. Sandler and COSP trained. Strong in needs analysis, financing conversations, and B2B account development. No producer license yet. Best fit for carriers and agencies that train and license. Do not use the phrase "insurance sales professional" as a current job title.
+
 ### Core Competencies / Skills Section (Best Practice)
 Reorder and emphasize based on the role. Use bold category labels.
 

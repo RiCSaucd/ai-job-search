@@ -4,7 +4,7 @@
 
 ## Identity
 - **Name:** Eric Hatch
-- **Location:** St. Augustine, FL, USA
+- **Location:** St. Augustine, FL 32080, USA
 - **Phone:** (207) 468-6688
 - **Email:** hatcheric950@gmail.com
 - **LinkedIn:** [YOUR_LINKEDIN_URL]
@@ -18,6 +18,8 @@
 | Degree | Period | Institution | Key Topics |
 |--------|--------|-------------|------------|
 | Business Administration / Marketing Coursework | — | Nichols College and Southern New Hampshire University | Business administration, marketing |
+
+<!-- Conflict from Insurance Sales Specialist résumé (2025-11-28): lists SNHU as "BS, Business Marketing, Jan 2025-2025". Keep coursework-only until a diploma is on file. -->
 
 ## Professional Experience
 
@@ -64,7 +66,7 @@ Remote / Maine
 - Networking and security fundamentals, Linux commands, threat detection awareness, incident response basics, risk and compliance awareness
 
 ### Business Platforms
-- Salesforce, automotive CRM / DMS, Smartsheet, Microsoft 365, Google Workspace, LinkedIn Sales Navigator
+- Salesforce, Microsoft Dynamics 365, automotive CRM / DMS, Smartsheet, Microsoft 365, Google Workspace, LinkedIn Sales Navigator
 
 ### Client & Revenue Skills
 - Technical communication, customer discovery, stakeholder training, pipeline management, B2B / B2C consultative sales
@@ -75,7 +77,10 @@ Remote / Maine
 - Volkswagen Level 3 Master Certification
 - HubSpot Social Media Marketing Certification
 - Sandler Sales Training
+- Certified Outside Sales Professional (COSP), Sales Training International
 - Communities: AI Automation Club; coding and AI-agent workflow coursework
+
+<!-- Insurance Sales Specialist résumé (2025-11-28) also listed CompTIA Security+ and CSE/CTSP as "In Progress/Planned". Do not present those as earned. -->
 
 ## Publications
 None listed.
@@ -84,5 +89,14 @@ None listed.
 - #1 Salesperson, Volkswagen of St. Augustine — 5 times; Employee of the Month — 3 times
 - Sales Excellence Award, Shultz and Lyman
 
+## Volunteer Work
+- **Habitat for Humanity** — St. Augustine, FL: 100+ volunteer hours; helped complete 5 homes
+- **St. Johns County Food Bank** — St. Augustine, FL: food drives, meal distribution, event coordination
+- **Big Brothers Big Sisters** — Augusta, ME: weekly mentoring of at-risk youth
+
 ## References
 More references available upon request.
+
+## Source notes
+- Master IT/AI résumé remains the canonical employment record (NEXUS, VW Jan 2023–Present, Shultz Jan 2021–Jan 2023, e-commerce 2020–2021).
+- `documents/cv/ERIC_HATCH_Insurance_Sales_Specialist_20251128.pdf` is a tailored sales variant. It omits NEXUS and IT certs, shortens Shultz to 2021–2022, and frames Eric as an "insurance sales professional." Use it for insurance-sales targeting only. Do not treat that headline as a job title he has held. No insurance producer license is on file.

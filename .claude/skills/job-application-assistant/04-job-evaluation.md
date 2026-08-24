@@ -31,6 +31,7 @@ Does work history align with what they're looking for?
 | 0-39 | Unrelated experience |
 
 **Strong:** High-performance customer-facing sales, CRM lifecycle management, AI automation consulting/founder work, technical product explanation
+**Insurance-sales adjacent:** Consultative selling, needs analysis, financing conversations, CRM follow-up, lead-driven (not cold-call) environments. Gap: no producer license on file.
 **Moderate:** E-commerce/ops troubleshooting, Linux/cyber home lab projects, certification-backed IT foundations
 **Entry-level:** Dedicated help desk / desktop support roles, junior cybersecurity / SOC analyst roles (certs + labs, limited production SOC tenure)
 

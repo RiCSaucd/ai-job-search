@@ -18,6 +18,7 @@ Eric Hatch's behavioral profile (inferred from CV) fits a **high-performance, cu
 - **Results ownership:** Consistently owns pipeline and revenue outcomes (#1 salesperson five times; $2M+ annual revenue).
 - **Process translation:** Turns complex product/tech/financing into clear recommendations; builds SOPs others can follow.
 - **Self-directed learning:** CompTIA A+, Google Cybersecurity Certificate, Linux/cyber lab, 10+ GitHub projects without waiting for formal IT tenure.
+- **Community follow-through:** Habitat for Humanity (100+ hours), food-bank coordination, and youth mentoring.
 
 ## How You Work Best
 - Customer-facing technical roles with clear metrics and ownership
