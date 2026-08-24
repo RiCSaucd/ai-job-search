@@ -50,6 +50,8 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 ### Certifications
 - **CompTIA A+ Certification**
 - **Google Cybersecurity Professional Certificate**
+- **Life & Health insurance license** (stated on master résumé; confirm state/number before regulated filings)
+- **Property & Casualty insurance license** (stated on master résumé; confirm state/number before regulated filings)
 - **Volkswagen Level 3 Master Certification**
 - **HubSpot Social Media Marketing Certification**
 - **Sandler Sales Training**

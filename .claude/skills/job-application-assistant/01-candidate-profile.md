@@ -74,6 +74,8 @@ Remote / Maine
 ## Certifications
 - CompTIA A+ Certification
 - Google Cybersecurity Professional Certificate
+- Life & Health insurance license (stated on master résumé; add state and license number before regulated-role filings)
+- Property & Casualty insurance license (stated on master résumé; add state and license number before regulated-role filings)
 - Volkswagen Level 3 Master Certification
 - HubSpot Social Media Marketing Certification
 - Sandler Sales Training
@@ -98,5 +100,7 @@ None listed.
 More references available upon request.
 
 ## Source notes
-- Master IT/AI résumé remains the canonical employment record (NEXUS, VW Jan 2023–Present, Shultz Jan 2021–Jan 2023, e-commerce 2020–2021).
-- `documents/cv/ERIC_HATCH_Insurance_Sales_Specialist_20251128.pdf` is a tailored sales variant. It omits NEXUS and IT certs, shortens Shultz to 2021–2022, and frames Eric as an "insurance sales professional." Use it for insurance-sales targeting only. Do not treat that headline as a job title he has held. No insurance producer license is on file.
+- `documents/cv/ERIC_HATCH_MASTER_RESUME.pdf` is the latest master variant (AI automation / IT / operations). It adds Life & Health and P&C licenses and lists a Nichols bachelor's degree.
+- Keep education as **coursework only** until a diploma is on file. The insurance résumé claimed an SNHU BS; the master claims a Nichols bachelor's. Those conflict.
+- Do **not** reframe Shultz and Lyman as an insurance agency. Public records for Schulz/Shultz & Lyman in the Augusta, ME area point to manufacturing / turnkey operations, which matches the fulfillment and delivery-delay bullets. Use Salesforce, B2B accounts, and quoting/documentation language from the master without calling the employer an insurer.
+- `documents/cv/ERIC_HATCH_Insurance_Sales_Specialist_20251128.pdf` remains a tailored sales variant. Do not use "insurance sales professional" as a job title he has held.
