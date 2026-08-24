@@ -102,6 +102,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
   `freelance-outreach`, `productized-offer`)
 - `.agents/skills/` - Job search CLI tools
 - `.cursor/agents/ai-automation-hunter.md` - Cursor subagent that finds AI automation jobs/gigs and routes them to `web-job-brief`, `freelance-outreach`, `productized-offer`, or `/apply`
+- `.cursor/agents/grokbot.md` - Grok-backed invoke target for the same hunt/apply routing (`Use the grokbot subagent to …`)
 
 ## Workflow for New Job Applications
 1. User provides a job posting (URL or text). Optionally run **web-job-brief** first to extract must-haves, keywords, salary, and the apply link.

@@ -75,6 +75,23 @@ class CompanionSkillContractTests(unittest.TestCase):
         ):
             self.assertIn(needle, text)
 
+    def test_grokbot_subagent_exists(self):
+        path = REPO_ROOT / ".cursor" / "agents" / "grokbot.md"
+        self.assertTrue(path.is_file(), f"missing {path}")
+        text = path.read_text(encoding="utf-8")
+        self.assertEqual(frontmatter_name(text), "grokbot")
+        self.assertIn("Use the grokbot subagent", text)
+        self.assertNotIn("Use proactively", text)
+        for needle in (
+            "web-job-brief",
+            "freelance-outreach",
+            "productized-offer",
+            "job-application-assistant",
+            "Claude Code",
+            "ai-automation-hunter",
+        ):
+            self.assertIn(needle, text)
+
     def test_saved_briefs_are_gitignored(self):
         gitignore = (REPO_ROOT / ".gitignore").read_text(encoding="utf-8")
         self.assertIn("job_briefs/*.md", gitignore)
