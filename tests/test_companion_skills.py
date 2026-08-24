@@ -92,6 +92,23 @@ class CompanionSkillContractTests(unittest.TestCase):
         ):
             self.assertIn(needle, text)
 
+    def test_changelog_records_unreleased_companion_work(self):
+        path = REPO_ROOT / "CHANGELOG.md"
+        self.assertTrue(path.is_file(), f"missing {path}")
+        text = path.read_text(encoding="utf-8")
+        self.assertIn("# Changelog", text)
+        self.assertIn("## [Unreleased]", text)
+        self.assertIn("keepachangelog.com", text)
+        for needle in (
+            "web-job-brief",
+            "freelance-outreach",
+            "productized-offer",
+            "ai-automation-hunter",
+            "grokbot",
+            "AGENTS.md",
+        ):
+            self.assertIn(needle, text)
+
     def test_saved_briefs_are_gitignored(self):
         gitignore = (REPO_ROOT / ".gitignore").read_text(encoding="utf-8")
         self.assertIn("job_briefs/*.md", gitignore)

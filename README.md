@@ -6,7 +6,7 @@
 
 [![CI](https://github.com/MadsLorentzen/ai-job-search/actions/workflows/ci.yml/badge.svg)](https://github.com/MadsLorentzen/ai-job-search/actions/workflows/ci.yml)
 
-An AI-powered job application framework built on [Claude Code](https://claude.com/claude-code). Fork it, fill in your profile, and let Claude evaluate job postings, tailor your CV, write cover letters, and prepare you for interviews.
+An AI-powered job application framework built on [Claude Code](https://claude.com/claude-code). Fork it, fill in your profile, and let Claude evaluate job postings, tailor your CV, write cover letters, and prepare you for interviews. Fork-specific notable changes are in [CHANGELOG.md](CHANGELOG.md).
 
 > Note: This is an independent open-source project and is not affiliated with, endorsed by, sponsored by, or maintained by Anthropic. Anthropic and Claude Code are referenced only to describe the toolchain this workflow uses.
 
@@ -141,6 +141,7 @@ The **ai-automation-hunter** Cursor subagent (`.cursor/agents/ai-automation-hunt
 
 ```
 ai-job-search/
+├── CHANGELOG.md                       # Keep a Changelog for this fork
 ├── CLAUDE.md                          # Main candidate profile + workflow rules
 ├── .cursor/agents/
 │   ├── ai-automation-hunter.md        # Cursor subagent: find AI automation work, route to cash

@@ -95,6 +95,7 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 - Preference: remote or nationwide US; relocation-required roles need explicit discussion
 
 ## Repo Structure
+- `CHANGELOG.md` - Keep a Changelog for this fork (Unreleased until tagged)
 - `cv/` - LaTeX CV variants (moderncv template, banking style)
 - `cover_letters/` - LaTeX cover letters (custom cover.cls template)
 - `.claude/skills/` - AI skill definitions for the application workflow
