@@ -158,3 +158,30 @@ export function extractJobIdFromUrl(url: string): string {
   const match = url.match(/\/job\/(\d+)\//)
   return match ? match[1] : ""
 }
+
+const JSON_LD_SCRIPT_RE = /<script[^>]*type\s*=\s*["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi
+
+/**
+ * Find the Schema.org JobPosting object among a page's JSON-LD script blocks.
+ * A block may hold a bare object or an array of objects; blocks that are not
+ * valid JSON are skipped.
+ */
+export function extractJobPosting(html: string): Record<string, unknown> | null {
+  for (const match of html.matchAll(JSON_LD_SCRIPT_RE)) {
+    let json: unknown
+    try {
+      json = JSON.parse(match[1])
+    } catch {
+      continue // not valid JSON — skip
+    }
+    if (Array.isArray(json)) {
+      const found = json.find(
+        (item) => item && typeof item === "object" && (item as Record<string, unknown>)["@type"] === "JobPosting",
+      )
+      if (found) return found as Record<string, unknown>
+    } else if (json && typeof json === "object" && (json as Record<string, unknown>)["@type"] === "JobPosting") {
+      return json as Record<string, unknown>
+    }
+  }
+  return null
+}

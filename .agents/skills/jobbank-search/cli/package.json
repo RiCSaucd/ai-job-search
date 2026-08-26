@@ -1,7 +1,7 @@
 {
   "name": "jobbank-cli",
   "version": "1.0.0",
-  "description": "CLI for Akademikernes Jobbank (jobbank.dk) — job search for highly educated candidates",
+  "description": "CLI for Akademikernes Jobbank (jobbank.dk) — job search for highly educated candidates. Zero runtime dependencies (plain bun + fetch).",
   "type": "module",
   "main": "src/cli.ts",
   "bin": {
@@ -12,12 +12,7 @@
     "test": "bun test --timeout 30000",
     "typecheck": "tsc --noEmit"
   },
-  "dependencies": {
-    "@bunli/core": "latest",
-    "@bunli/utils": "latest",
-    "node-html-parser": "^6.1.13",
-    "zod": "^3.23.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/bun": "latest",
     "typescript": "^5.4.0"

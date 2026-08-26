@@ -8,15 +8,18 @@ CLI for [Akademikernes Jobbank](https://jobbank.dk) — Denmark's job portal for
 
 **Authentication**: None required. A browser User-Agent header is sent, but Jobbank may still block automated requests with Cloudflare bot protection. In that case the CLI exits with a clear error and callers should use a WebSearch fallback rather than retrying.
 **Format**: RSS XML (search), HTML with embedded JSON-LD (detail).
+**Dependencies**: None (plain `bun` + `fetch`). `bun install` is optional and only pulls dev type defs.
 
 ---
 
 ## Installation
 
 ```bash
-cd skills/jobbank-search/cli
-bun install
+cd .agents/skills/jobbank-search/cli
+bun install   # optional — only installs TypeScript dev types
 ```
+
+The CLI runs without any install because it has zero runtime dependencies.
 
 ---
 
@@ -209,7 +212,7 @@ bun run src/cli.ts search [flags]
 
 > **Important limitation:** The RSS feed returns a maximum of **100 items** per request. There is no pagination via RSS — the `page=` parameter has no effect on the RSS endpoint. If your query matches more than 100 jobs, only the first 100 are returned. The `meta.total` field reflects the true total count (fetched separately from the HTML search page title), while `results` is capped at 100.
 
-> **Multi-value flags**: Flags marked "Repeatable" map to params that accept multiple values in the API (repeated query params). Pass them multiple times: `--type 3 --type 6` sends `cvtype=3&cvtype=6`.
+> **Multi-value flags**: Flags marked "Repeatable" map to params that accept multiple values in the API (repeated query params). Pass them multiple times or comma-separate the values: `--type 3 --type 6` and `--type 3,6` both send `cvtype=3&cvtype=6`.
 
 ### RSS Parsing
 
@@ -345,6 +348,8 @@ All errors are written to **stderr** in JSON format and exit with code `1`:
 { "error": "Jobbank is blocking automated requests with Cloudflare bot protection. Skip this portal or use the WebSearch fallback.", "code": "API_ERROR" }
 { "error": "No JSON-LD found on job page", "code": "PARSE_ERROR" }
 { "error": "--key or at least one filter is required", "code": "MISSING_REQUIRED" }
+{ "error": "--limit must be a number, got \"foo\"", "code": "BAD_ARG" }
+{ "error": "Unknown command \"frobnicate\"", "code": "BAD_CMD" }
 ```
 
 ---
