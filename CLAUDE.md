@@ -1,10 +1,9 @@
-# Job Application Assistant for [YOUR_NAME]
+# Job Application Assistant for Eric Hatch
 
-<!-- SETUP: This file is populated by running /setup -->
-<!-- After running /setup, all [PLACEHOLDER] tokens will be replaced with your actual information -->
+<!-- SETUP: Populated from Eric_Hatch_IT_AI_Cybersecurity_Resume_Updated via /setup Path B -->
 
 ## Role
-This repo is a job application workspace. Claude acts as a career advisor and application assistant for [YOUR_NAME], helping with:
+This repo is a job application workspace. Claude acts as a career advisor and application assistant for Eric Hatch, helping with:
 1. **Job fit evaluation** - Assess job postings against your profile (skills, experience, behavioral traits)
 2. **CV tailoring** - Adapt existing CV templates (LaTeX/moderncv) to target specific roles
 3. **Cover letter writing** - Draft targeted cover letters using existing templates (LaTeX)
@@ -13,68 +12,78 @@ This repo is a job application workspace. Claude acts as a career advisor and ap
 
 ## Candidate Profile
 
-<!-- This section is auto-populated by /setup. You can also fill it in manually. -->
-
 ### Identity
-- **Name:** [YOUR_NAME]
-- **Location:** [YOUR_CITY], [YOUR_COUNTRY] ([YOUR_COMMUTE_CONSTRAINTS])
-- **Languages:** [YOUR_LANGUAGES]
-- **Status:** [YOUR_EMPLOYMENT_STATUS]
-- **LinkedIn headline:** "[YOUR_LINKEDIN_HEADLINE]"
+- **Name:** Eric Hatch
+- **Location:** St. Augustine, FL, USA (open to remote / nationwide roles; Northeast Florida on-site acceptable)
+- **Languages:** English (native)
+- **Status:** Employed (Vehicle Experience Specialist, Volkswagen of St. Augustine) and Founder (NEXUS AI Agency)
+- **LinkedIn headline:** "IT Support | AI Automation | Cybersecurity Foundations | Technical Customer Success"
+- **Phone:** (207) 468-6688
+- **Email:** hatcheric950@gmail.com
+- **LinkedIn / GitHub:** not on resume contact line — add via `/setup --section` when available
 
 ### Education
-<!-- List your degrees, most recent first -->
-- **[DEGREE_LEVEL] in [FIELD]** ([YEAR_START]-[YEAR_END]) - [INSTITUTION]
-  - Thesis: "[THESIS_TITLE]"
-  - Topics: [KEY_TOPICS]
+- **Business Administration / Marketing Coursework** — Nichols College and Southern New Hampshire University
+  - Topics: business administration, marketing fundamentals
 
 ### Professional Experience
-<!-- List your roles, most recent first -->
-- **[JOB_TITLE]** ([START_DATE] - [END_DATE]) - **[COMPANY]** ([LOCATION])
-  - [KEY_RESPONSIBILITY_1]
-  - [KEY_RESPONSIBILITY_2]
-  - [KEY_ACHIEVEMENT]
+- **Founder & AI Automation Strategist** (2024 - Present) - **NEXUS AI Agency** (Remote)
+  - Built an AI-powered marketing and automation practice: discovery, workflow strategy, implementation, client communication, documentation
+  - Audit operations to convert repetitive work into AI-assisted workflows (ChatGPT, Claude, structured process design)
+  - Create SOPs for content production, lead generation, customer follow-up, and communication pipelines
+- **Vehicle Experience Specialist** (Jan 2023 - Present) - **Volkswagen of St. Augustine** (St. Augustine, FL)
+  - Ranked #1 salesperson five times; closed 12–15 vehicles/month; generated more than $2M annual revenue
+  - Full customer lifecycle via CRM/DMS: digital lead through financing, delivery, and post-sale support
+  - Increased client retention 30% via disciplined multi-channel CRM follow-up; +40% online engagement via video/social; +20% closing rates through clear product/tech/financing explanations
+- **Outside Sales Associate** (Jan 2021 - Jan 2023) - **Shultz and Lyman** (Augusta, ME)
+  - B2B/B2C account development with Salesforce CRM; weekly field visits to 10+ corporate accounts; expanded portfolios 15%
+  - 98% on-time fulfillment; helped cut delivery delays 25% via operations coordination
+- **Entrepreneur — E-Commerce & Photography Operations** (2020 - 2021) - **Self-Employed** (Remote / Maine)
+  - Shopify and Amazon storefronts; photography editing workflows; technical troubleshooting
 
 ### Technical Skills
-- **Primary:** [YOUR_PRIMARY_SKILLS]
-- **Secondary:** [YOUR_SECONDARY_SKILLS]
-- **Domain:** [YOUR_DOMAIN_EXPERTISE]
-- **Software:** [YOUR_TOOLS_AND_SOFTWARE]
+- **Primary:** IT support (Windows, macOS, Linux/Pop!_OS, hardware/software troubleshooting, remote support), AI automation (ChatGPT, Claude, prompt engineering, AI agents, SOPs, workflow design), cybersecurity foundations (networking, threat detection awareness, incident response basics, risk/compliance awareness)
+- **Secondary:** GitHub, CLI workflows, self-hosted/VPS (OVH) experimentation, Salesforce, automotive CRM/DMS, Smartsheet, Microsoft 365, Google Workspace, LinkedIn Sales Navigator
+- **Domain:** Technical customer success, consultative B2B/B2C sales, translating complex tech into business outcomes
+- **Software:** ChatGPT, Claude, Claude Code (agentic coding), Salesforce, Shopify, Amazon Seller, M365, Google Workspace
 
 ### Certifications
-<!-- List relevant certifications with dates -->
-- **[CERTIFICATION_NAME]** - [HOURS]h - completed [DATE]
+- **CompTIA A+ Certification**
+- **Google Cybersecurity Professional Certificate**
+- **Volkswagen Level 3 Master Certification**
+- **HubSpot Social Media Marketing Certification**
+- **Sandler Sales Training**
+- Professional communities: AI Automation Club; coding and AI-agent workflow coursework
 
 ### Publications
-<!-- List peer-reviewed publications, if any -->
-- [AUTHOR_LIST] ([YEAR]). [TITLE]. [JOURNAL].
+- None listed
 
 ### Awards
-<!-- List relevant awards, hackathons, competitions -->
-- [AWARD_NAME] - [EVENT] ([YEAR])
+- #1 Salesperson, Volkswagen of St. Augustine — 5 times; Employee of the Month — 3 times
+- Sales Excellence Award, Shultz and Lyman
 
 ### Behavioral Profile
-<!-- Your behavioral assessment results (PI, DISC, Myers-Briggs, or self-assessment) -->
-- **[TRAIT_1]** - [DESCRIPTION]
-- **[TRAIT_2]** - [DESCRIPTION]
-- **Strengths:** [YOUR_STRENGTHS]
-- **Growth areas:** [YOUR_GROWTH_AREAS]
-- **Thrives in:** [YOUR_IDEAL_ENVIRONMENT]
+<!-- Inferred from CV — review before relying on this -->
+- **High-performance, results-driven** - Repeated #1 sales ranking, measurable revenue and retention outcomes
+- **Process builder** - Converts manual work into SOPs and AI-assisted workflows
+- **Strengths:** Technical communication, customer discovery, stakeholder training, self-directed labs and portfolio building
+- **Growth areas:** Formal IT helpdesk tenure and deep security operations experience still early (foundations + certs + labs)
+- **Thrives in:** Customer-facing technical roles with autonomy to document, automate, and improve processes
 
 ### What Excites You
-<!-- What motivates you professionally -->
-- [PASSION_1]
-- [PASSION_2]
+- Building practical AI automation that cuts hours of manual work into minutes
+- IT support and cybersecurity learning through hands-on labs and certifications
+- Translating complex technology into clear customer/business outcomes
 
 ### Target Sectors
-<!-- Industries and companies you're targeting -->
-- [SECTOR_1]: [EXAMPLE_COMPANIES]
-- [SECTOR_2]: [EXAMPLE_COMPANIES]
+- IT support / MSP / help desk and desktop support
+- AI automation agencies, ops automation, and technical customer success
+- Cybersecurity (entry / junior analyst / SOC foundations)
+- Automotive retail tech-adjacent and CRM-heavy customer success roles
 
 ### Deal-breakers
-<!-- Hard constraints on job search -->
-- [DEALBREAKER_1]
-- [DEALBREAKER_2]
+- None stated on resume — refine via `/setup --section search` later
+- Preference: remote or nationwide US; relocation-required roles need explicit discussion
 
 ## Repo Structure
 - `cv/` - LaTeX CV variants (moderncv template, banking style)

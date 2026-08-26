@@ -39,18 +39,18 @@ Expected output: `Output written on main_<company>.pdf (2 pages, ...)`. Any page
     linkcolor=blue,
     filecolor=magenta,
     urlcolor=blue,
-    pdftitle={[YOUR_NAME] - CV},
+    pdftitle={Eric Hatch - CV},
     pdfpagemode=FullScreen,
 }
 \usepackage[scale=0.77]{geometry}
 \usepackage{import}
 
 % Personal data
-\name{[FIRST_NAME]}{[LAST_NAME]}
-\address{[YOUR_ADDRESS]}{}{}
-\phone[mobile]{[YOUR_PHONE]}
-\email{[YOUR_EMAIL]}
-\extrainfo{\href{[YOUR_LINKEDIN_URL]}{LinkedIn}, \href{[YOUR_GITHUB_URL]}{GitHub}}
+\name{Eric}{Hatch}
+\address{St. Augustine, FL, USA}{}{}
+\phone[mobile]{(207) 468-6688}
+\email{hatcheric950@gmail.com}
+% LinkedIn / GitHub URLs not on source resume — add when available
 
 \begin{document}
 \makecvtitle
@@ -105,12 +105,18 @@ Write 5-7 lines that function as an "elevator pitch": a concise, compelling intr
 
 **Create 2-3 profile statement templates for your main role types:**
 
-<!-- SETUP: These are populated based on your background -->
-**For [YOUR_PRIMARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_1]
+<!-- SETUP: Populated for Eric Hatch -->
+**For IT Support / Help Desk / Desktop Support roles:**
+> CompTIA A+ certified IT professional with hands-on Linux, Windows, and macOS troubleshooting experience, remote-support fundamentals, and a self-built cybersecurity home lab. Combines technical problem-solving with 5+ years of high-performance customer-facing work — translating complex technology into clear outcomes and documenting repeatable SOPs.
 
-**For [YOUR_SECONDARY_ROLE_TYPE] roles:**
-> [YOUR_PROFILE_STATEMENT_TEMPLATE_2]
+**For AI Automation / Workflow Automation roles:**
+> AI automation strategist and founder who designs practical ChatGPT/Claude agent workflows, SOPs, and follow-up systems for real client operations. Reduced one client's daily manual outreach from 3+ hours to under 30 minutes. Comfortable with GitHub, CLI workflows, VPS experimentation, and teaching non-technical stakeholders how to use automation safely.
+
+**For Junior Cybersecurity / SOC Foundations roles:**
+> Google Cybersecurity Professional Certificate holder with CompTIA A+, Linux command-line practice, and a multi-computer home lab focused on networking, threat-detection awareness, and incident-response basics. Brings strong documentation habits and customer communication from technical sales into security-aware support roles.
+
+**For Technical Customer Success roles:**
+> Technical customer success profile: Salesforce and automotive CRM lifecycle ownership, Sandler sales training, and a track record of retention (+30%) and engagement (+40%) gains. Pairs CRM discipline with AI-assisted follow-up automation and clear product/technology explanations for B2B and B2C customers.
 
 ### Core Competencies / Skills Section (Best Practice)
 Reorder and emphasize based on the role. Use bold category labels.
