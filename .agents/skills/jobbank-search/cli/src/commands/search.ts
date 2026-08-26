@@ -1,190 +1,138 @@
-import { defineCommand, option } from "@bunli/core"
-import { z } from "zod"
 import { rssFetch, fetchWithUA, writeError, parseRssDescription, extractJobIdFromUrl, BASE_URL } from "../helpers.js"
 
-export const search = defineCommand({
-  name: "search",
-  description: "Search job listings via RSS feed",
-  options: {
-    key: option(z.string().optional(), {
-      description: "Keyword search (title, company, keyword)",
-    }),
-    exclude: option(z.string().optional(), {
-      description: "Exclude keywords (antikey)",
-    }),
-    type: option(z.union([z.string(), z.array(z.string())]).optional(), {
-      description: "Job type code (cvtype). Repeatable: --type 3 --type 6",
-    }),
-    education: option(z.union([z.string(), z.array(z.string())]).optional(), {
-      description: "Education field code (udd). Repeatable.",
-    }),
-    location: option(z.union([z.string(), z.array(z.string())]).optional(), {
-      description: "Region code (amt). Repeatable.",
-    }),
-    "work-area": option(z.union([z.string(), z.array(z.string())]).optional(), {
-      description: "Work area / function code (erf). Repeatable.",
-    }),
-    industry: option(z.union([z.string(), z.array(z.string())]).optional(), {
-      description: "Industry code (branche). Repeatable.",
-    }),
-    "suitable-for": option(z.union([z.string(), z.array(z.string())]).optional(), {
-      description: "Suitable-for code (andet). Repeatable.",
-    }),
-    company: option(z.coerce.number().optional(), {
-      description: "Company ID (virk)",
-    }),
-    remote: option(z.string().optional(), {
-      description: "Remote work: helt or delvist (fjernarbejde)",
-    }),
-    since: option(z.string().optional(), {
-      description: "Posted on or after date, format YYYY-MM-DD (oprettet)",
-    }),
-    limit: option(z.coerce.number().optional(), {
-      description: "Cap total results returned by CLI (client-side)",
-    }),
-    format: option(z.enum(["json", "table", "plain"]).default("json"), {
-      description: "Output format: json, table, plain",
-    }),
-  },
-  handler: async ({ flags, signal }) => {
-    if (signal.aborted) return
+export interface SearchOpts {
+  key?: string
+  exclude?: string
+  // Multi-value filter codes (already split on commas; empty means unset).
+  type: string[]
+  education: string[]
+  location: string[]
+  workArea: string[]
+  industry: string[]
+  suitableFor: string[]
+  company?: string
+  remote?: string // helt | delvist
+  since?: string // YYYY-MM-DD
+  limit?: number // client-side cap on returned results
+  format: "json" | "table" | "plain"
+}
 
-    // Require at least one filter
-    const hasFilter =
-      flags.key ||
-      flags.exclude ||
-      flags.type ||
-      flags.education ||
-      flags.location ||
-      flags["work-area"] ||
-      flags.industry ||
-      flags["suitable-for"] ||
-      flags.company !== undefined ||
-      flags.remote ||
-      flags.since
+interface SearchResult {
+  id: string
+  title: string
+  company: string
+  location: string
+  jobType: string
+  description: string
+  url: string
+  posted: string
+  deadline: string | null
+}
 
-    if (!hasFilter) {
-      writeError("--key or at least one filter is required", "MISSING_REQUIRED")
-      process.exit(1)
-    }
+/** Map the parsed flags onto Jobbank's RSS query params (cvtype, amt, ...). */
+function buildParams(opts: SearchOpts): Record<string, string | string[]> {
+  const params: Record<string, string | string[]> = {}
+  if (opts.key) params["key"] = opts.key
+  if (opts.exclude) params["antikey"] = opts.exclude
+  if (opts.type.length) params["cvtype"] = opts.type
+  if (opts.education.length) params["udd"] = opts.education
+  if (opts.location.length) params["amt"] = opts.location
+  if (opts.workArea.length) params["erf"] = opts.workArea
+  if (opts.industry.length) params["branche"] = opts.industry
+  if (opts.suitableFor.length) params["andet"] = opts.suitableFor
+  if (opts.company !== undefined) params["virk"] = opts.company
+  if (opts.remote) params["fjernarbejde"] = opts.remote
+  if (opts.since) params["oprettet"] = opts.since
+  return params
+}
 
-    const params: Record<string, string | string[]> = {}
+export async function runSearch(opts: SearchOpts): Promise<number> {
+  const params = buildParams(opts)
 
-    if (flags.key) params["key"] = flags.key
-    if (flags.exclude) params["antikey"] = flags.exclude
-    if (flags.type) {
-      const vals = Array.isArray(flags.type) ? flags.type : [flags.type]
-      params["cvtype"] = vals.flatMap((v) => v.split(","))
-    }
-    if (flags.education) {
-      const vals = Array.isArray(flags.education) ? flags.education : [flags.education]
-      params["udd"] = vals.flatMap((v) => v.split(","))
-    }
-    if (flags.location) {
-      const vals = Array.isArray(flags.location) ? flags.location : [flags.location]
-      params["amt"] = vals.flatMap((v) => v.split(","))
-    }
-    if (flags["work-area"]) {
-      const vals = Array.isArray(flags["work-area"]) ? flags["work-area"] : [flags["work-area"]]
-      params["erf"] = vals.flatMap((v) => v.split(","))
-    }
-    if (flags.industry) {
-      const vals = Array.isArray(flags.industry) ? flags.industry : [flags.industry]
-      params["branche"] = vals.flatMap((v) => v.split(","))
-    }
-    if (flags["suitable-for"]) {
-      const vals = Array.isArray(flags["suitable-for"]) ? flags["suitable-for"] : [flags["suitable-for"]]
-      params["andet"] = vals.flatMap((v) => v.split(","))
-    }
-    if (flags.company !== undefined) params["virk"] = String(flags.company)
-    if (flags.remote) params["fjernarbejde"] = flags.remote
-    if (flags.since) params["oprettet"] = flags.since
+  // Require at least one filter — an unfiltered RSS pull is never intended.
+  if (Object.keys(params).length === 0) {
+    writeError("--key or at least one filter is required", "MISSING_REQUIRED")
+    return 1
+  }
 
+  try {
+    // Fetch RSS feed
+    const items = await rssFetch(params)
+
+    // Also fetch total count from HTML page (secondary request)
+    let total: number | null = null
     try {
-      // Fetch RSS feed
-      const items = await rssFetch(params)
-
-      if (signal.aborted) return
-
-      // Also fetch total count from HTML page (secondary request)
-      let total: number | null = null
-      try {
-        // Small delay to be polite
-        await new Promise((resolve) => setTimeout(resolve, 300))
-        const searchParams = new URLSearchParams()
-        for (const [key, value] of Object.entries(params)) {
-          if (Array.isArray(value)) {
-            for (const v of value) searchParams.append(key, v)
-          } else {
-            searchParams.append(key, value)
-          }
+      // Small delay to be polite
+      await new Promise((resolve) => setTimeout(resolve, 300))
+      const searchParams = new URLSearchParams()
+      for (const [key, value] of Object.entries(params)) {
+        if (Array.isArray(value)) {
+          for (const v of value) searchParams.append(key, v)
+        } else {
+          searchParams.append(key, value)
         }
-        const htmlUrl = `${BASE_URL}/job/?${searchParams.toString()}`
-        const htmlResp = await fetchWithUA(htmlUrl)
-        if (htmlResp.ok) {
-          const html = await htmlResp.text()
-          // Extract from <title> tag: "457 relevante job og karriereopslag i Akademikernes Jobbank"
-          const titleMatch = html.match(/<title[^>]*>\s*(\d[\d.,]*)\s+relevante job/i)
-          if (titleMatch) {
-            total = parseInt(titleMatch[1].replace(/[.,]/g, ""), 10)
-          }
+      }
+      const htmlResp = await fetchWithUA(`${BASE_URL}/job/?${searchParams.toString()}`)
+      if (htmlResp.ok) {
+        const html = await htmlResp.text()
+        // Extract from <title> tag: "457 relevante job og karriereopslag i Akademikernes Jobbank"
+        const titleMatch = html.match(/<title[^>]*>\s*(\d[\d.,]*)\s+relevante job/i)
+        if (titleMatch) {
+          total = parseInt(titleMatch[1].replace(/[.,]/g, ""), 10)
         }
-      } catch {
-        // Secondary request failed — total stays null
       }
-
-      // Normalize items
-      let results = items.map((item) => {
-        const parsed = parseRssDescription(item.description)
-        const id = extractJobIdFromUrl(item.link)
-        const posted = item.pubDate ? new Date(item.pubDate).toISOString() : ""
-        return {
-          id,
-          title: item.title,
-          company: parsed.company,
-          location: parsed.location,
-          jobType: parsed.jobType,
-          description: item.description,
-          url: item.link,
-          posted,
-          deadline: parsed.deadline,
-        }
-      })
-
-      // Apply limit
-      if (flags.limit !== undefined) {
-        results = results.slice(0, flags.limit)
-      }
-
-      const output = { meta: { total }, results }
-
-      if (flags.format === "json") {
-        console.log(JSON.stringify(output, null, 2))
-      } else if (flags.format === "table") {
-        outputTable(results)
-      } else {
-        outputPlain(results)
-      }
-    } catch (err) {
-      writeError(err instanceof Error ? err.message : String(err), "API_ERROR")
-      process.exit(1)
+    } catch {
+      // Secondary request failed — total stays null
     }
-  },
-})
 
-function outputTable(results: Array<Record<string, unknown>>): void {
+    // Normalize items
+    let results: SearchResult[] = items.map((item) => {
+      const parsed = parseRssDescription(item.description)
+      return {
+        id: extractJobIdFromUrl(item.link),
+        title: item.title,
+        company: parsed.company,
+        location: parsed.location,
+        jobType: parsed.jobType,
+        description: item.description,
+        url: item.link,
+        posted: item.pubDate ? new Date(item.pubDate).toISOString() : "",
+        deadline: parsed.deadline,
+      }
+    })
+
+    // Apply limit
+    if (opts.limit !== undefined) {
+      results = results.slice(0, opts.limit)
+    }
+
+    if (opts.format === "json") {
+      console.log(JSON.stringify({ meta: { total }, results }, null, 2))
+    } else if (opts.format === "table") {
+      outputTable(results)
+    } else {
+      outputPlain(results)
+    }
+    return 0
+  } catch (err) {
+    writeError(err instanceof Error ? err.message : String(err), "API_ERROR")
+    return 1
+  }
+}
+
+function outputTable(results: SearchResult[]): void {
   console.log("id        title                                company                location           deadline")
   for (const r of results) {
-    const id = String(r.id ?? "-").padEnd(9)
-    const title = String(r.title ?? "-").substring(0, 36).padEnd(36)
-    const company = String(r.company ?? "-").substring(0, 22).padEnd(22)
-    const location = String(r.location ?? "-").substring(0, 18).padEnd(18)
-    const deadline = String(r.deadline ?? "-")
+    const id = r.id.padEnd(9)
+    const title = r.title.substring(0, 36).padEnd(36)
+    const company = r.company.substring(0, 22).padEnd(22)
+    const location = r.location.substring(0, 18).padEnd(18)
+    const deadline = r.deadline ?? "-"
     console.log(`${id} ${title} ${company} ${location} ${deadline}`)
   }
 }
 
-function outputPlain(results: Array<Record<string, unknown>>): void {
+function outputPlain(results: SearchResult[]): void {
   for (const r of results) {
     console.log(`id: ${r.id}`)
     console.log(`title: ${r.title}`)
