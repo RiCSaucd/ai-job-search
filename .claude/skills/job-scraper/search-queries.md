@@ -1,69 +1,92 @@
 # Search Queries for Job Scraper
 
-<!-- SETUP: Customize these queries based on your skills, target roles, and location -->
+<!-- SETUP: Customized for Eric Hatch — US remote/nationwide IT, AI automation, cybersecurity foundations, technical customer success -->
 
 ## Search Sites
 
-Primary (your market's job boards - scaffold one with `/add-portal`):
-- **[YOUR_JOB_BOARD]** - your market's largest general job board
-- **linkedin.com/jobs** - LinkedIn job listings (filter: [YOUR_COUNTRY] / [YOUR_CITY])
-- **[YOUR_INDUSTRY_JOB_BOARD]** - a niche/industry board for your field (optional)
-- **[YOUR_ADDITIONAL_JOB_BOARD]** - another major board for your market (optional)
+Primary (US market):
+- **linkedin.com/jobs** - LinkedIn job listings (filter: United States / Remote / St. Augustine, Florida)
+- **freehire.dev** - Tech job aggregator (remote / multi-market; use for automation and tech-adjacent roles)
 
-Secondary (company career pages via Google):
-- Direct Google searches with `site:` filters for known target companies
+Secondary (optional / market-specific):
+- Danish portal CLIs (Jobindex, Jobbank, Jobdanmark, Jobnet) — **skip for this candidate** (US market)
+- Company career pages via Google `site:` searches for target employers
 
 ## Query Categories
 
-Queries are grouped by priority. Each query should be combined with your location terms (e.g. your city, region, or metro area) where the site supports it.
+Queries are grouped by priority. Combine with location terms (Remote, United States, St. Augustine / Jacksonville FL) where the site supports it.
 
-### Priority 1: [YOUR_PRIMARY_ROLE_TYPE]
+### Priority 1: IT Support / Help Desk / Desktop Support
 
-These match your strongest and most desired career direction.
-
-```
-site:[YOUR_JOB_BOARD] "[YOUR_PRIMARY_JOB_TITLE]" [YOUR_CITY]
-site:[YOUR_JOB_BOARD] "[YOUR_KEY_SKILL]" [YOUR_CITY]
-site:linkedin.com/jobs "[YOUR_PRIMARY_JOB_TITLE]" [YOUR_COUNTRY]
-```
-
-### Priority 2: [YOUR_DOMAIN_EXPERTISE]
-
-These match your domain expertise.
+These match the strongest near-term career direction (CompTIA A+ + customer-facing technical communication).
 
 ```
-site:[YOUR_JOB_BOARD] [YOUR_DOMAIN_KEYWORD_1] [YOUR_CITY] OR [YOUR_REGION]
-site:[YOUR_JOB_BOARD] [YOUR_DOMAIN_KEYWORD_2] [YOUR_COUNTRY]
-site:linkedin.com/jobs [YOUR_DOMAIN_KEYWORD_1] [YOUR_CITY] [YOUR_COUNTRY]
+site:linkedin.com/jobs "IT Support" Remote United States
+site:linkedin.com/jobs "Help Desk" OR "Desktop Support" Florida
+site:linkedin.com/jobs "Technical Support Specialist" Remote
 ```
 
-### Priority 3: [YOUR_ADJACENT_ROLE_TYPE]
+CLI translations:
+- linkedin-search: `-q "IT Support" -l "Remote" --jobage 14`
+- linkedin-search: `-q "Help Desk" -l "United States" --jobage 14`
+- linkedin-search: `-q "Desktop Support" -l "St. Augustine, Florida" --jobage 14`
+- linkedin-search: `-q "Technical Support Specialist" -l "Remote" --jobage 14`
 
-Adjacent roles you could pivot into.
+### Priority 2: AI Automation / Technical Customer Success
 
-```
-site:[YOUR_JOB_BOARD] "[YOUR_ADJACENT_TITLE_1]" [YOUR_KEY_SKILL] [YOUR_CITY]
-site:[YOUR_JOB_BOARD] "[YOUR_ADJACENT_TITLE_2]" [YOUR_KEY_SKILL] [YOUR_CITY]
-```
-
-### Priority 4: Broader Technical / Consulting
-
-Wider net for general technical roles.
+Domain strengths: ChatGPT/Claude workflows, SOPs, CRM follow-up, founder automation practice.
 
 ```
-site:[YOUR_JOB_BOARD] [YOUR_KEY_SKILL] developer [YOUR_CITY]
-site:linkedin.com/jobs "[YOUR_KEY_SKILL] developer" [YOUR_CITY]
-site:[YOUR_JOB_BOARD] "technical consultant" [YOUR_DOMAIN] [YOUR_CITY]
+site:linkedin.com/jobs "AI Automation" OR "Workflow Automation" Remote
+site:linkedin.com/jobs "Technical Customer Success" Remote United States
+site:linkedin.com/jobs "Customer Success" Salesforce Remote
 ```
+
+CLI translations:
+- linkedin-search: `-q "AI Automation" -l "Remote" --jobage 14`
+- linkedin-search: `-q "Technical Customer Success" -l "United States" --jobage 14`
+- linkedin-search: `-q "Customer Success" -l "Remote" --jobage 14`
+- freehire-search: search automation / AI / customer-success oriented tech roles with remote facet
+
+### Priority 3: Junior Cybersecurity / SOC Foundations
+
+Adjacent pivot using Google Cybersecurity Certificate + home lab (entry-level framing).
+
+```
+site:linkedin.com/jobs "Junior Security Analyst" OR "SOC Analyst" Remote United States
+site:linkedin.com/jobs "Cybersecurity" "entry" OR "junior" Florida
+site:linkedin.com/jobs "Security Operations" junior Remote
+```
+
+CLI translations:
+- linkedin-search: `-q "Junior Security Analyst" -l "United States" --jobage 14`
+- linkedin-search: `-q "SOC Analyst" -l "Remote" --jobage 14`
+- linkedin-search: `-q "Cybersecurity Analyst" -l "Florida, United States" --jobage 14`
+
+### Priority 4: Broader Technical / CRM Hybrid
+
+Wider net for tech-adjacent support and sales-engineer-lite roles.
+
+```
+site:linkedin.com/jobs "Technical Account" OR "Solutions" support Remote
+site:linkedin.com/jobs "IT Specialist" Remote United States
+site:linkedin.com/jobs "Implementation Specialist" Salesforce Remote
+```
+
+CLI translations:
+- linkedin-search: `-q "IT Specialist" -l "Remote" --jobage 14`
+- linkedin-search: `-q "Implementation Specialist" -l "United States" --jobage 14`
+- freehire-search: broader technical support / ops keywords with remote
 
 ## Location Filter
 
-When evaluating results, verify the job location is within reasonable commute distance from your home. Define acceptable areas:
-- [YOUR_CITY] and surrounding areas
-- [ACCEPTABLE_AREA_1]
-- [ACCEPTABLE_AREA_2]
-- [BORDERLINE_AREA] (borderline - ~X min by transit)
-- [TOO_FAR_AREA] (too far)
+When evaluating results, verify the job location fits:
+- Remote / nationwide US (ideal)
+- St. Augustine, FL and surrounding Northeast Florida (ideal for hybrid/on-site)
+- Jacksonville, FL metro (acceptable)
+- Elsewhere in Florida with hybrid (acceptable)
+- Mandatory relocation outside FL with no remote option (borderline — discuss; default skip)
+- International-only / non-US onsite (too far)
 
 ## Date Filter
 
@@ -72,4 +95,6 @@ Only include jobs posted within the last 14 days, or with an application deadlin
 ## Adapting Queries
 
 If the user specifies a focus area, select queries from the matching category and also generate 2-3 custom queries for that focus. For example:
-- "/scrape [focus_area]" -> relevant category queries + custom focus-specific queries
+- "/scrape cybersecurity" -> Priority 3 + custom SOC/IR queries
+- "/scrape automation" -> Priority 2 + freehire AI/ops queries
+- "/scrape broad" -> all four priority categories
